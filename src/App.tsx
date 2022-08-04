@@ -5,6 +5,8 @@ import { Categories } from "./pages/Categories";
 import { Electronics } from "./pages/Electronics";
 import { Home } from "./pages/Home";
 import { Jewelery } from "./pages/Jewelery";
+
+import { MansClothing } from "./pages/MansClothing";
 import { PageNotFound } from "./pages/PageNotFound";
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
             <Route path="electronics" element={<Electronics />} />
             <Route path="/jewelery" element={<Jewelery />} />
+            <Route path="/mansClothing" element={<MansClothing />} />
           </Routes>
         </div>
       </main>
