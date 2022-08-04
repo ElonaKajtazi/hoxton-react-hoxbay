@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { Categories } from "./pages/Categories";
+import { Electronics } from "./pages/Electronics";
 import { Home } from "./pages/Home";
 import { PageNotFound } from "./pages/PageNotFound";
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="categories" element={<Categories />} />
             <Route path="*" element={<PageNotFound />} />
+            <Route path="electronics" element={<Electronics />} />
           </Routes>
         </div>
       </main>
