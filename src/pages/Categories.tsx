@@ -17,7 +17,7 @@ export function Categories() {
       {categories.map((category) => (
         <ul className="categories-container__list">
           <li>
-            <Link to="/electronics">{category.name}</Link>
+            <Link to="/jewelery">{category.name}</Link>
           </li>
         </ul>
       ))}
