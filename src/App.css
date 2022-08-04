@@ -220,7 +220,38 @@ img {
   border: 2px solid var(--random-colour);
   background-color: var(--white);
 }
-
+.categories-container__list .electronics {
+  background-color: var(--blue)
+}
+.categories-container__list .electronics:hover {
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  background-color: var(--white);
+}
+.categories-container__list .jewelery {
+  background-color: var(--yellow)
+}
+.categories-container__list .jewelery:hover {
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
+  background-color: var(--white);
+}
+.categories-container__list .mans-clothing {
+  background-color: var(--red)
+}
+.categories-container__list .mans-clothing:hover {
+  color: var(--red);
+  border: 2px solid var(--red);
+  background-color: var(--white);
+}
+.categories-container__list .womens-clothing {
+  background-color: var(--green)
+}
+.categories-container__list .womens-clothing:hover {
+  color: var(--green);
+  border: 2px solid var(--green);
+  background-color: var(--white);
+}
 /* Basket */
 
 .basket-container {

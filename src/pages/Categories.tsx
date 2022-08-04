@@ -13,17 +13,22 @@ export function Categories() {
   //       .then((categoriesFromServer) => setcatecories(categoriesFromServer));
   //   }, []);
 
-
   return (
-    <div className="categories-container">
-      <ul className="categories-container__list">
-        <li>
-          <Link to="/electronics">Electronics</Link>
-          <Link to="/jewelery">Jewelery</Link>
-          <Link to="/mansClothing">Man's Clothing</Link>
-          <Link to="/womensClothing">Women's Clothing</Link>
-        </li>
-      </ul>
-    </div>
+    <ul className="categories-container">
+      <li className="categories-container__list">
+        <Link className="electronics" to="/electronics">
+          Electronics
+        </Link>
+        <Link className="jewelery" to="/jewelery">
+          Jewelery
+        </Link>
+        <Link className="mans-clothing" to="/mansClothing">
+          Man's Clothing
+        </Link>
+        <Link className="womens-clothing" to="/womensClothing">
+          Women's Clothing
+        </Link>
+      </li>
+    </ul>
   );
 }
