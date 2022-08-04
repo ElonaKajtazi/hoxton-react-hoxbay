@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
+import { Basket } from "./pages/Basket";
 import { Categories } from "./pages/Categories";
 import { Electronics } from "./pages/Electronics";
 import { Home } from "./pages/Home";
@@ -46,6 +47,7 @@ function App() {
               element={<WomensClothing products={products} />}
             />
             <Route path="/productDetails:id" element={<ProductDetails />} />
+            <Route path="/basket" element={<Basket />} />
           </Routes>
         </div>
       </main>

@@ -221,7 +221,7 @@ img {
   background-color: var(--white);
 }
 .categories-container__list .electronics {
-  background-color: var(--blue)
+  background-color: var(--blue);
 }
 .categories-container__list .electronics:hover {
   color: var(--blue);
@@ -229,7 +229,7 @@ img {
   background-color: var(--white);
 }
 .categories-container__list .jewelery {
-  background-color: var(--yellow)
+  background-color: var(--yellow);
 }
 .categories-container__list .jewelery:hover {
   color: var(--yellow);
@@ -237,7 +237,7 @@ img {
   background-color: var(--white);
 }
 .categories-container__list .mans-clothing {
-  background-color: var(--red)
+  background-color: var(--red);
 }
 .categories-container__list .mans-clothing:hover {
   color: var(--red);
@@ -245,7 +245,7 @@ img {
   background-color: var(--white);
 }
 .categories-container__list .womens-clothing {
-  background-color: var(--green)
+  background-color: var(--green);
 }
 .categories-container__list .womens-clothing:hover {
   color: var(--green);
@@ -278,6 +278,12 @@ img {
   margin-top: 1rem;
   padding: 1rem;
   border-top: 1px solid var(--grey);
+  /* background-color: #0064d3; */
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
 }
 
 .basket-container li:last-of-type {
@@ -289,8 +295,12 @@ img {
   margin-top: 2rem;
   margin-right: 2rem;
   text-align: right;
+  /* font-weight: 100; */
+  
 }
-
+.basket-container img {
+  width: 50px;
+}
 .basket-container__item {
   display: grid;
   align-items: center;
