@@ -1,19 +1,35 @@
+import { useEffect, useState } from "react";
+import { Navigate, useParams } from "react-router-dom";
 export function ProductDetails() {
-  return (
-    <div className="product-detail">
-      <img
-        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        alt=""
-      />
-      <div className="product-detail__side">
-        <h2>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h2>
-        <p>
-          Your perfect pack for everyday use and walks in the forest. Stash your
-          laptop (up to 15 inches) in the padded sleeve, your everyday
-        </p>
-        <h3>$109.95</h3>
-        <button>Add to basket</button>
+  //   const getProduct = (id) => {
+  //     return products.find((product) => product.id === id);
+  //   };
+  const [product, setProduct] = useState(null);
+  const params = useParams();
+  useEffect(() => {
+    fetch(`http://localhost:4000/products/${params.id}`)
+      .then((resp) => resp.json())
+      .then((productFromServer) => setProduct(productFromServer));
+  }, []);
+
+  if (product === null)
+    return (
+      <div>
+        <h1>Loading...</h1>
       </div>
-    </div>
+    );
+  if (product.id === undefined) return <Navigate to="/home" />;
+  return (
+    <ul>
+      <li className="product-detail">
+        <img src={product.image} alt={product.name} />
+        <div className="product-detail__side">
+          <h2>{product.title}</h2>
+          <p>{product.description}</p>
+          <h3>{product.price}</h3>
+          <button>Add to basket</button>
+        </div>
+      </li>
+    </ul>
   );
 }

@@ -45,7 +45,7 @@ function App() {
               path="/womensClothing"
               element={<WomensClothing products={products} />}
             />
-            <Route path="/productDetails" element={<ProductDetails />} />
+            <Route path="/productDetails:id" element={<ProductDetails />} />
           </Routes>
         </div>
       </main>
