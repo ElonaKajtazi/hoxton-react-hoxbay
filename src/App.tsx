@@ -8,6 +8,7 @@ import { Jewelery } from "./pages/Jewelery";
 
 import { MansClothing } from "./pages/MansClothing";
 import { PageNotFound } from "./pages/PageNotFound";
+import { ProductDetails } from "./pages/ProductDetails";
 import { WomensClothing } from "./pages/WomensClothing";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
               path="/womensClothing"
               element={<WomensClothing products={products} />}
             />
+            <Route path="/productDetails" element={<ProductDetails />} />
           </Routes>
         </div>
       </main>
