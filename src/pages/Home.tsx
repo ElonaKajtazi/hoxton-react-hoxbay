@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HomeItems } from "./HomeItems";
+import { HomeItems } from "../components/HomeItems";
 export function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {

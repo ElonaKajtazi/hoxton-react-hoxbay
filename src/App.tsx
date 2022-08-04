@@ -1,14 +1,21 @@
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import { Home } from "./components/Home";
+import { Categories } from "./pages/Categories";
+import { Home } from "./pages/Home";
 
 function App() {
+  const [page, setPage] = useState("home");
   return (
     <>
       <Header />
       <main>
         {/* Create your routes here. Don't forget to install the router package! */}
         <div className="products-container">
-          <Home />
+          <Routes>
+            <Route path="home" element={<Home />} />
+            <Route path="categories" element={<Categories />} />
+          </Routes>
         </div>
       </main>
     </>
