@@ -8,6 +8,7 @@ import { Jewelery } from "./pages/Jewelery";
 
 import { MansClothing } from "./pages/MansClothing";
 import { PageNotFound } from "./pages/PageNotFound";
+import { WomensClothing } from "./pages/WomensClothing";
 
 function App() {
   // const [page, setPage] = useState("home");
@@ -25,6 +26,7 @@ function App() {
             <Route path="electronics" element={<Electronics />} />
             <Route path="/jewelery" element={<Jewelery />} />
             <Route path="/mansClothing" element={<MansClothing />} />
+            <Route path="/womensClothing" element={<WomensClothing />} />
           </Routes>
         </div>
       </main>

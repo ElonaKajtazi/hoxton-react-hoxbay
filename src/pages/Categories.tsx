@@ -19,6 +19,8 @@ export function Categories() {
           <Link to="/electronics">Electronics</Link>
           <Link to="/jewelery">Jewelery</Link>
           <Link to="/mansClothing">Man's Clothing</Link>
+          <Link to="/womensClothing">Women's Clothing</Link>
+
         </li>
       </ul>
     </div>
