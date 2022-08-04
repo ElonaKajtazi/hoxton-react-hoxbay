@@ -1,12 +1,4 @@
-import { useEffect, useState } from "react";
-
-export function MansClothing() {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:4000/products")
-      .then((resp) => resp.json())
-      .then((productsFromServer) => setProducts(productsFromServer));
-  }, []);
+export function MansClothing({ products }) {
   const mansClothingItems = products.filter(
     (product) => product.categoryId === 3
   );

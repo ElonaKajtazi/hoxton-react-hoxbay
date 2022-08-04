@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Categories() {
@@ -12,6 +12,8 @@ export function Categories() {
   //       .then((resp) => resp.json())
   //       .then((categoriesFromServer) => setcatecories(categoriesFromServer));
   //   }, []);
+
+
   return (
     <div className="categories-container">
       <ul className="categories-container__list">
@@ -20,7 +22,6 @@ export function Categories() {
           <Link to="/jewelery">Jewelery</Link>
           <Link to="/mansClothing">Man's Clothing</Link>
           <Link to="/womensClothing">Women's Clothing</Link>
-
         </li>
       </ul>
     </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { Categories } from "./pages/Categories";
@@ -11,7 +11,12 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { WomensClothing } from "./pages/WomensClothing";
 
 function App() {
-  // const [page, setPage] = useState("home");
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:4000/products")
+      .then((resp) => resp.json())
+      .then((productsFromServer) => setProducts(productsFromServer));
+  }, []);
   return (
     <>
       <Header />
@@ -23,10 +28,22 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="categories" element={<Categories />} />
             <Route path="*" element={<PageNotFound />} />
-            <Route path="electronics" element={<Electronics />} />
-            <Route path="/jewelery" element={<Jewelery />} />
-            <Route path="/mansClothing" element={<MansClothing />} />
-            <Route path="/womensClothing" element={<WomensClothing />} />
+            <Route
+              path="electronics"
+              element={<Electronics products={products} />}
+            />
+            <Route
+              path="/jewelery"
+              element={<Jewelery products={products} />}
+            />
+            <Route
+              path="/mansClothing"
+              element={<MansClothing products={products} />}
+            />
+            <Route
+              path="/womensClothing"
+              element={<WomensClothing products={products} />}
+            />
           </Routes>
         </div>
       </main>
