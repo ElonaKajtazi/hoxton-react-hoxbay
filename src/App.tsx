@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { Categories } from "./pages/Categories";
 import { Home } from "./pages/Home";
@@ -14,6 +14,7 @@ function App() {
         {/* Create your routes here. Don't forget to install the router package! */}
         <div className="products-container">
           <Routes>
+            <Route index element={<Navigate to="/home" />} />
             <Route path="home" element={<Home />} />
             <Route path="categories" element={<Categories />} />
             <Route path="*" element={<PageNotFound />} />
