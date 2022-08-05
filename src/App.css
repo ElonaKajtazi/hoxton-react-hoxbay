@@ -296,7 +296,6 @@ img {
   margin-right: 2rem;
   text-align: right;
   /* font-weight: 100; */
-  
 }
 .basket-container img {
   width: 50px;
@@ -306,4 +305,27 @@ img {
   align-items: center;
   grid-template-columns: auto 3fr 1fr 1fr;
   column-gap: 2rem;
+}
+.quantity {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  align-items: center;
+}
+.decrease-btn {
+  border: 1px solid var(--red);
+  border-radius: 5px;
+  color: var(--red);
+  padding: 0.2rem 0.4rem;
+  background-color: #e5323830;
+  font-weight: 600;
+
+}
+.increase-btn {
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  color: var(--green);
+  padding: 0.2rem 0.4rem;
+  background-color: #88b71938;
+  font-weight: 600;
 }

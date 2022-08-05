@@ -1,9 +1,15 @@
 import { StoreItemType } from "../App";
 type Props = {
   products: StoreItemType[];
+  increaseProductQuantity: (product: StoreItemType) => void;
+  decreaseProductQuantity: (product: StoreItemType) => void;
 };
 
-export function Basket({ products }: Props) {
+export function Basket({
+  products,
+  decreaseProductQuantity,
+  increaseProductQuantity,
+}: Props) {
   function getInBasketProducts() {
     return products.filter((product) => product.inBasket > 0);
   }
@@ -16,7 +22,7 @@ export function Basket({ products }: Props) {
     return `£ ${total.toFixed(2)}`;
   }
   const total = getTotal();
-  
+
   return (
     <div className="basket-container">
       <h2>Your Basket </h2>
@@ -25,7 +31,25 @@ export function Basket({ products }: Props) {
           <li>
             <img src={product.image} alt="" />
             <p>{product.title}</p>
-            <p>Qty:{product.inBasket}</p>
+            <div className="quantity">
+              <button
+                className="decrease-btn"
+                onClick={function () {
+                  decreaseProductQuantity(product);
+                }}
+              >
+                -
+              </button>
+              <p>{product.inBasket}</p>
+              <button
+                className="increase-btn"
+                onClick={function () {
+                  increaseProductQuantity(product);
+                }}
+              >
+                +
+              </button>
+            </div>
             <p>Price: £{product.price * product.inBasket}</p>
           </li>
         ))}

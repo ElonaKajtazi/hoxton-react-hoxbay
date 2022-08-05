@@ -39,7 +39,7 @@ function App() {
     setProducts(productCopy);
   }
   function decreaseProductQuantity(product: StoreItemType) {
-    const productCopy: StoreType = structuredClone(product);
+    const productCopy: StoreType = structuredClone(products);
 
     const match = productCopy.find((target) => target.id === product.id)!;
     match.inBasket--;
@@ -81,7 +81,16 @@ function App() {
                 />
               }
             />
-            <Route path="/basket" element={<Basket products={products} />} />
+            <Route
+              path="/basket"
+              element={
+                <Basket
+                  products={products}
+                  increaseProductQuantity={increaseProductQuantity}
+                  decreaseProductQuantity={decreaseProductQuantity}
+                />
+              }
+            />
           </Routes>
         </div>
       </main>
