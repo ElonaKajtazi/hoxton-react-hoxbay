@@ -1,20 +1,23 @@
-export function Basket() {
+import { useState } from "react";
+
+export function Basket({ products }) {
   return (
     <div className="basket-container">
       <h2>Your Basket </h2>
       <ul>
-        <li>
-          <img
-            src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
-            alt=""
-          />
-          <p>Mens Cotton Jacket</p>
-          <p>Qty:1</p>
-          <p>Price:$100</p>
-        </li>
-
+        {products.map((product) => (
+          <li>
+            <img
+              src={product.image}
+              alt=""
+            />
+            <p>{product.title}</p>
+            <p>Qty:1</p>
+            <p>Price:£{product.price}</p>
+          </li>
+        ))}
       </ul>
-      <h3>Total:</h3>
+      <h3>Your Total: £100</h3>
     </div>
   );
 }

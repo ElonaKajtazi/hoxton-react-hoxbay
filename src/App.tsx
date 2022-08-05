@@ -47,7 +47,7 @@ function App() {
               element={<WomensClothing products={products} />}
             />
             <Route path="/productDetails:id" element={<ProductDetails />} />
-            <Route path="/basket" element={<Basket />} />
+            <Route path="/basket" element={<Basket products={products} />} />
           </Routes>
         </div>
       </main>
