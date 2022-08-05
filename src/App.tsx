@@ -31,7 +31,7 @@ function App() {
       .then((productsFromServer) => setProducts(productsFromServer));
   }, []);
   function increaseProductQuantity(product: StoreItemType) {
-    const productCopy: StoreType = structuredClone(product);
+    const productCopy: StoreType = structuredClone(products);
 
     const match = productCopy.find((target) => target.id === product.id)!;
     match.inBasket++;
