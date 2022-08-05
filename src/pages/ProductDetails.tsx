@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 export function ProductDetails() {
-  //   const getProduct = (id) => {
-  //     return products.find((product) => product.id === id);
-  //   };
+
   const [product, setProduct] = useState(null);
   const params = useParams();
   useEffect(() => {

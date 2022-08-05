@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
-
-export function Electronics({ products }) {
+import { ProductsType } from "../App";
+type Props = {
+  products: ProductsType[];
+};
+export function Electronics({ products }: Props) {
   const electronicsItems = products.filter(
     (product) => product.categoryId === 1
   );

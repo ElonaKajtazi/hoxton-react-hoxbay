@@ -12,6 +12,14 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { ProductDetails } from "./pages/ProductDetails";
 import { WomensClothing } from "./pages/WomensClothing";
 
+export type ProductsType = {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  description: string;
+  categoryId: number;
+};
 function App() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
