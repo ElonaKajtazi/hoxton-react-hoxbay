@@ -19,6 +19,7 @@ export type ProductsType = {
   image: string;
   description: string;
   categoryId: number;
+  inBasket: number;
 };
 function App() {
   const [products, setProducts] = useState([]);
