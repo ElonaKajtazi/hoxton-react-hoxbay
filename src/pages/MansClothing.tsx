@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { ProductsType } from "../App";
+import { StoreItemType } from "../App";
 type Props = {
-  products: ProductsType[];
+  products: StoreItemType[];
 };
-export function MansClothing({ products }: Props) { 
+export function MansClothing({ products }: Props) {
   const mansClothingItems = products.filter(
     (product) => product.categoryId === 3
   );

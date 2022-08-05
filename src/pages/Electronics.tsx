@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { ProductsType } from "../App";
+import { StoreItemType } from "../App";
 type Props = {
-  products: ProductsType[];
+  products: StoreItemType[];
 };
 export function Electronics({ products }: Props) {
   const electronicsItems = products.filter(

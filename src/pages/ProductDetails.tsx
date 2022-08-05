@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
-export function ProductDetails() {
-
+import { StoreItemType } from "../App";
+import { StoreType } from "../App";
+export function ProductDetails({increaseProductQuantity}) {
   const [product, setProduct] = useState(null);
   const params = useParams();
   useEffect(() => {
@@ -17,6 +18,8 @@ export function ProductDetails() {
       </div>
     );
   if (product.id === undefined) return <Navigate to="/home" />;
+
+
   return (
     <ul>
       <li className="product-detail">
@@ -25,7 +28,13 @@ export function ProductDetails() {
           <h2>{product.title}</h2>
           <p>{product.description}</p>
           <h3>£ {product.price}</h3>
-          <button>Add to basket</button>
+          <button
+            onClick={function () {
+              increaseProductQuantity(product);
+            }}
+          >
+            Add to basket
+          </button>
         </div>
       </li>
     </ul>

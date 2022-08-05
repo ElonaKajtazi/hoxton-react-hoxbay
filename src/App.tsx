@@ -12,7 +12,7 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { ProductDetails } from "./pages/ProductDetails";
 import { WomensClothing } from "./pages/WomensClothing";
 
-export type ProductsType = {
+export type StoreItemType = {
   id: number;
   title: string;
   price: number;
@@ -21,13 +21,31 @@ export type ProductsType = {
   categoryId: number;
   inBasket: number;
 };
+export type StoreType = StoreItemType[];
+
 function App() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<StoreType>([]);
   useEffect(() => {
     fetch("http://localhost:4000/products")
       .then((resp) => resp.json())
       .then((productsFromServer) => setProducts(productsFromServer));
   }, []);
+  function increaseProductQuantity(product: StoreItemType) {
+    const productCopy: StoreType = structuredClone(product);
+
+    const match = productCopy.find((target) => target.id === product.id)!;
+    match.inBasket++;
+
+    setProducts(productCopy);
+  }
+  function decreaseProductQuantity(product: StoreItemType) {
+    const productCopy: StoreType = structuredClone(product);
+
+    const match = productCopy.find((target) => target.id === product.id)!;
+    match.inBasket--;
+
+    setProducts(productCopy);
+  }
   return (
     <>
       <Header />
@@ -55,7 +73,14 @@ function App() {
               path="/womensClothing"
               element={<WomensClothing products={products} />}
             />
-            <Route path="/productDetails:id" element={<ProductDetails />} />
+            <Route
+              path="/productDetails:id"
+              element={
+                <ProductDetails
+                  increaseProductQuantity={increaseProductQuantity}
+                />
+              }
+            />
             <Route path="/basket" element={<Basket products={products} />} />
           </Routes>
         </div>
