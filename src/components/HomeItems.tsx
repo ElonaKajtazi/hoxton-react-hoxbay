@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
-
-export function HomeItems({ product }) {
+import { StoreItemType } from "../App";
+type Props = {
+  product: StoreItemType;
+};
+export function HomeItems({ product }: Props) {
   const title = product.title;
   return (
     <Link to={`/productDetails${product.id}`}>

@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { StoreItemType } from "../App";
-import { StoreType } from "../App";
-export function ProductDetails({increaseProductQuantity}) {
+
+type Props = {
+  increaseProductQuantity: (product: StoreItemType) => void;
+};
+// type ProoductType = {
+//   product: StoreItemType | null;
+// }
+
+export function ProductDetails({ increaseProductQuantity }: Props) {
   const [product, setProduct] = useState(null);
   const params = useParams();
   useEffect(() => {
@@ -18,7 +25,6 @@ export function ProductDetails({increaseProductQuantity}) {
       </div>
     );
   if (product.id === undefined) return <Navigate to="/home" />;
-
 
   return (
     <ul>
