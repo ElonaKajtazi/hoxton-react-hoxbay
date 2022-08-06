@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { StoreItemType } from "../App";
 type Props = {
   products: StoreItemType[];
@@ -29,8 +30,10 @@ export function Basket({
       <ul>
         {inBasketProducts.map((product) => (
           <li>
-            <img src={product.image} alt="" />
-            <p>{product.title}</p>
+            <Link to={`/productDetails${product.id}`}>
+              <img src={product.image} alt="" />
+              <p>{product.title}</p>
+            </Link>
             <div className="quantity">
               <button
                 className="decrease-btn"
