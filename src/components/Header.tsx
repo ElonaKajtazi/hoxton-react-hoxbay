@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { getRandomColor } from "../helpers";
 
-function Header() {
+type Props = {
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+};
+function Header({ setSearch }: Props) {
   const randomColor = getRandomColor();
+
   return (
     <header
       className="header"
@@ -27,6 +31,16 @@ function Header() {
           </li>
         </ul>
       </nav>
+      <form action="">
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="search"
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+        />
+      </form>
     </header>
   );
 }

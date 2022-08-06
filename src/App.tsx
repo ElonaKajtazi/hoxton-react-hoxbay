@@ -25,6 +25,7 @@ export type StoreType = StoreItemType[];
 
 function App() {
   const [products, setProducts] = useState<StoreType>([]);
+  const [search, setSearch] = useState("");
   useEffect(() => {
     fetch("http://localhost:4000/products")
       .then((resp) => resp.json())
@@ -46,32 +47,33 @@ function App() {
 
     setProducts(productCopy);
   }
+
   return (
     <>
-      <Header />
+      <Header setSearch={setSearch} />
       <main>
         {/* Create your routes here. Don't forget to install the router package! */}
         <div className="products-container">
           <Routes>
             <Route index element={<Navigate to="/home" />} />
-            <Route path="home" element={<Home />} />
+            <Route path="home" element={<Home search={search} />} />
             <Route path="categories" element={<Categories />} />
             <Route path="*" element={<PageNotFound />} />
             <Route
               path="electronics"
-              element={<Electronics products={products} />}
+              element={<Electronics products={products} search={search} />}
             />
             <Route
               path="/jewelery"
-              element={<Jewelery products={products} />}
+              element={<Jewelery products={products} search={search} />}
             />
             <Route
               path="/mansClothing"
-              element={<MansClothing products={products} />}
+              element={<MansClothing products={products} search={search} />}
             />
             <Route
               path="/womensClothing"
-              element={<WomensClothing products={products} />}
+              element={<WomensClothing products={products} search={search} />}
             />
             <Route
               path="/productDetails:id"

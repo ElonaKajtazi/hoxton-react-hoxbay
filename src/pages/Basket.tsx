@@ -50,7 +50,7 @@ export function Basket({
                 +
               </button>
             </div>
-            <p>Price: £{product.price * product.inBasket}</p>
+            <p>Price: £{(product.price * product.inBasket).toFixed(2)}</p>
           </li>
         ))}
       </ul>
