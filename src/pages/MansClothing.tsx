@@ -14,7 +14,7 @@ export function MansClothing({ products, search }: Props) {
   return (
     <ul className="products-container__list">
       {filteredProducts.map((product) => (
-        <Link to={`/productDetails${product.id}`}>
+        <Link to={`/productDetails${product.id}`} key={product.id}>
           <li className="product-item">
             <img src={product.image} alt={product.title} />
             <h3>{`${product.title.slice(0, 21)}...`}</h3>

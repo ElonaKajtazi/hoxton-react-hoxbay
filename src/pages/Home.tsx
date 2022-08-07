@@ -19,7 +19,7 @@ export function Home({ search }: Props) {
   return (
     <ul className="products-container__list">
       {filteredProducts.map((product) => (
-        <HomeItems product={product} />
+        <HomeItems product={product} key={product.id} />
       ))}
     </ul>
   );

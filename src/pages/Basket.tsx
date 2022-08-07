@@ -29,7 +29,7 @@ export function Basket({
       <h2>Your Basket </h2>
       <ul>
         {inBasketProducts.map((product) => (
-          <li>
+          <li key={product.id}>
             <Link to={`/productDetails${product.id}`}>
               <img src={product.image} alt="" />
               <p>{product.title}</p>

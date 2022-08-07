@@ -6,7 +6,7 @@ type Props = {
 export function HomeItems({ product }: Props) {
   const title = product.title;
   return (
-    <Link to={`/productDetails${product.id}`}>
+    <Link to={`/productDetails${product.id}`} key={product.id}>
       <li className="product-item">
         <img src={product.image} alt={product.title} />
         <h3>{`${title.slice(0, 21)}...`}</h3>

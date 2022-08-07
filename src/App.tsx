@@ -52,7 +52,6 @@ function App() {
     <>
       <Header setSearch={setSearch} />
       <main>
-        {/* Create your routes here. Don't forget to install the router package! */}
         <div className="products-container">
           <Routes>
             <Route index element={<Navigate to="/home" />} />
